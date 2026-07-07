@@ -10,29 +10,43 @@ user_name = input('Как вас зовут? ')
 
 
 # 2. Сбор данных
-# Функция для проверки числа, с передачей аргументов
-# 1 аргумент - подсказка, 2 аргумент - тип данных
-# Основу взял у ии практикума, дополнил на основе гайдов из интернета
-def check_number(hint, number_type):
-    """Вычисляет тип ввода пользователя"""
-    while True:
+# Ввод данных и проверка на тип
+# и значение меньше или равное нулю
+while True:
+    try:
+        user_age = int(input('Введите ваш возраст (пр.: 45): '))
+        if user_age <= 0:
+            print('Значение должно быть больше 0')
+            continue
+        else:
+            print('=' * 60)
+            break
+    except ValueError:
+        print('Пожалуйста, введите обычное число!')
 
-        try:
-            number = number_type(input(hint))
-            if number <= 0:
-                print('Значение должно быть больше 0')
-                continue
-            else:
-                print('=' * 60)
-                return number
-        except ValueError:
-            print('Пожалуйста, введите обычное число!')
+while True:
+    try:
+        user_weight = float(input('Ваш вес в КГ (пр.: 40.5 или 40): '))
+        if user_weight <= 0:
+            print('Значение должно быть больше 0')
+            continue
+        else:
+            print('=' * 60)
+            break
+    except ValueError:
+        print('Пожалуйста, введите обычное число!')
 
-
-# объявление переменных для расчетов с вызовом функции
-user_age = check_number('Введите ваш возраст (пр.: 45): ', int)
-user_weight = check_number('Ваш вес в КГ (пр.: 40.5 или 40): ', float)
-user_height = check_number('Ваш рост в метрах (пр.: 1.65 / 2): ', float)
+while True:
+    try:
+        user_height = float(input('Ваш рост в метрах (пр.: 1.65 / 2): '))
+        if user_height <= 0:
+            print('Значение должно быть больше 0')
+            continue
+        else:
+            print('=' * 60)
+            break
+    except ValueError:
+        print('Пожалуйста, введите обычное число!')
 
 # 3. Логика расчетов
 # Индекс массы тела

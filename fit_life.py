@@ -3,7 +3,7 @@
 WATER_PER_KG = 30
 WATER_ON_LITTER = 1000
 
-#Линия для визуального отделения
+# Линия для визуального отделения
 print("=" * 60)
 # 1. Знакомство
 user_name = input('Как вас зовут? ')
@@ -20,7 +20,7 @@ def check_number(hint, number_type):
                 print('Значение должно быть больше 0')
                 continue
             else:
-                print("=" * 60) 
+                print("=" * 60 ) 
                 return number
         except ValueError:
             print('Пожалуйста, введите обычное число!')

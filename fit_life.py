@@ -2,11 +2,13 @@
 # Константы для неизменяемых мер величин
 WATER_PER_KG = 30
 WATER_ON_LITTER = 1000
+# Для проверки положительных величин
+MIN_POSITIVE_VALUE = 0
 
 # Линия для визуального отделения
-print("=" * 60)
+print('=' * 60)
 # 1. Знакомство
-user_name = input('Как вас зовут? ')
+user_name = input('Как вас зовут? ').strip()
 
 
 # 2. Сбор данных
@@ -16,7 +18,7 @@ user_name = input('Как вас зовут? ')
 while True:
     try:
         user_age = int(input('Введите ваш возраст (пр.: 45): '))
-        if user_age <= 0:
+        if user_age <= MIN_POSITIVE_VALUE:
             print('Значение должно быть больше 0')
             continue
         else:
@@ -28,7 +30,7 @@ while True:
 while True:
     try:
         user_weight = float(input('Ваш вес в КГ (пр.: 40.5 или 40): '))
-        if user_weight <= 0:
+        if user_weight <= MIN_POSITIVE_VALUE:
             print('Значение должно быть больше 0')
             continue
         else:
@@ -40,7 +42,7 @@ while True:
 while True:
     try:
         user_height = float(input('Ваш рост в метрах (пр.: 1.65 / 2): '))
-        if user_height <= 0:
+        if user_height <= MIN_POSITIVE_VALUE:
             print('Значение должно быть больше 0')
             continue
         else:
